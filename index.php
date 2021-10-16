@@ -20,7 +20,7 @@
                 <div class="row mb-3">
                   <div class="col-md">
                     <div class="form-group">
-                      <label for="id_label_single">From</label>
+                      <label for="id_label_single">Dari</label>
 
                       <label for="id_label_single" style="width: 100%;">
                         <select class="js-example-basic-single js-states form-control" id="id_label_single" style="width: 100%;">
@@ -43,7 +43,7 @@
                   </div>
                   <div class="col-md">
                     <div class="form-group">
-                      <label for="id_label_single2">To</label>
+                      <label for="id_label_single2">Tujuan</label>
                       <div class="probootstrap_select-wrap">
                         <label for="id_label_single2" style="width: 100%;">
                         <select class="js-example-basic-single js-states form-control" id="id_label_single2" style="width: 100%;">
@@ -68,14 +68,14 @@
                 <div class="row mb-5">
                   <div class="col-md">
                     <div class="form-group">
-                      <label for="probootstrap-date-departure">Departure</label>
+                      <label for="probootstrap-date-departure">Tanggal Berangkat</label>
                       <div class="probootstrap-date-wrap">
-                        <span class="icon ion-calendar"></span> 
-                        <input type="text" id="probootstrap-date-departure" class="form-control" placeholder="">
+                        <!-- <span class="icon ion-calendar"></span>  -->
+                        <input type="date" id="probootstrap-date-departure" class="form-control" placeholder="">
                       </div>
                     </div>
                   </div>
-                  <div class="col-md">
+                  <!-- <div class="col-md">
                     <div class="form-group">
                       <label for="probootstrap-date-arrival">Arrival</label>
                       <div class="probootstrap-date-wrap">
@@ -83,16 +83,12 @@
                         <input type="text" id="probootstrap-date-arrival" class="form-control" placeholder="">
                       </div>
                     </div>
-                  </div>
+                  </div> -->
                 </div>
                 <!-- END row -->
                 <div class="row">
                   <div class="col-md">
-                    <label for="round" class="mr-5"><input type="radio" id="round" name="direction">  Round</label>
-                    <label for="oneway"><input type="radio" id="oneway" name="direction">  Oneway</label>
-                  </div>
-                  <div class="col-md">
-                    <input type="submit" value="Submit" class="btn btn-primary btn-block">
+                    <input type="submit" value="Cari Tiket" class="btn btn-primary btn-block">
                   </div>
                 </div>
               </div>

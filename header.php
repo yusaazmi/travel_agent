@@ -42,7 +42,7 @@ session_start();
 
     <nav class="navbar navbar-expand-lg navbar-dark probootstrap_navbar" id="probootstrap-navbar">
       <div class="container">
-        <a class="navbar-brand" href="/">Places</a>
+        <a class="navbar-brand" href="/">Mahesa Putra Travel</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#probootstrap-menu" aria-controls="probootstrap-menu" aria-expanded="false" aria-label="Toggle navigation">
           <span><i class="ion-navicon"></i></span>
         </button>
@@ -50,9 +50,9 @@ session_start();
           <ul class="navbar-nav ml-auto">
             <li class="nav-item active"><a class="nav-link" href="index.php">Home</a></li>
             <li class="nav-item"><a class="nav-link" href="city-guides.html">City Guides</a></li>
-            <li class="nav-item"><a class="nav-link" href="travel.php">Jadwal Travel</a></li>
+            <li class="nav-item"><a class="nav-link" href="travel.php">Travel</a></li>
             <li class="nav-item"><a class="nav-link" href="travel.html">Travel With Us</a></li>
-            <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+            <li class="nav-item"><a class="nav-link" href="contact.php">Contact</a></li>
             <?php
             if(isset($_SESSION['username']))
             {
