@@ -49,7 +49,7 @@ session_start();
         <div class="collapse navbar-collapse" id="probootstrap-menu">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item active"><a class="nav-link" href="index.php">Home</a></li>
-            <li class="nav-item"><a class="nav-link" href="city-guides.html">City Guides</a></li>
+            <li class="nav-item"><a class="nav-link" href="jadwal_bus.php">Jadwal Bus</a></li>
             <li class="nav-item"><a class="nav-link" href="travel.php">Travel</a></li>
             <li class="nav-item"><a class="nav-link" href="travel.html">Travel With Us</a></li>
             <li class="nav-item"><a class="nav-link" href="contact.php">Contact</a></li>

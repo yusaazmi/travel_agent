@@ -1,4 +1,9 @@
-<?php include('header.php');?>
+<?php include('header.php');
+$id = $_GET['id'];
+$bus = "SELECT * from bus LEFT JOIN kota k1 on bus.dari = k1.id_kota LEFT JOIN kota k2 on bus.tujuan = k2.id_kota where id_bus = $id";
+$sql_bus = mysqli_query($dbc,$bus);
+$data_bus = mysqli_fetch_array($sql_bus);
+?>
     <div id="layoutSidenav_content">
         <main>
             <div class="container-fluid">
@@ -17,19 +22,20 @@
                         DataTable Example
                     </div>
                     <div class="card-body">
-                    <form action="save_bus.php" method="POST" enctype="multipart/form-data">
+                    <form action="save_edit_bus.php" method="POST" enctype="multipart/form-data">
                         <div class="form-row">
+                            <input type="hidden" name="id" value="<?php echo $id; ?>">
                             <div class="form-group col-lg-4">
                                 <label for="inputEmail4">Kendaraan</label>
-                                <input type="text" class="form-control" id="kendaraan" name="kendaraan">
+                                <input type="text" class="form-control" id="kendaraan" value="<?php echo $data_bus['kendaraan']; ?>" name="kendaraan">
                             </div>
                             <div class="form-group col-md-4">
                                 <label for="inputPassword4">Plat Nomor</label>
-                                <input type="text" class="form-control" name="plat_nomor" id="plat_nomor">
+                                <input type="text" class="form-control" value="<?php echo $data_bus['plat_nomor'];?>" name="plat_nomor" id="plat_nomor">
                             </div>
                             <div class="form-group col-md-4">
                                 <label for="inputPassword4">Jumlah Kursi</label>
-                                <input type="number" class="form-control" name="jumlah_kursi" id="jumlah_kursi">
+                                <input type="number" class="form-control" value="<?php echo $data_bus['jumlah_kursi']; ?>" name="jumlah_kursi" id="jumlah_kursi">
                             </div>
                         </div>
                         <div class="form-row">
@@ -42,7 +48,7 @@
                             <div class="form-group col-md-4">
                                 <label for="inputEmail4">Dari</label>
                                 <select name="dari" id="dari" class="form-select">
-                                    <option value="">Pilih kota awal</option>
+                                    <option value="<?php echo $data_bus['dari'];?>"><?php echo $data_bus[9]; ?></option>
                                 <?php
                                 while($data = mysqli_fetch_array($sql))
                                 {
@@ -54,7 +60,7 @@
                             <div class="form-group col-md-4">
                                 <label for="inputPassword4">Tujuan</label>
                                 <select name="tujuan" id="tujuan" class="form-select">
-                                    <option value="">Pilih kota tujuan</option>
+                                    <option value="<?php echo $data_bus['tujuan']; ?>"><?php echo $data_bus['nama_kota']; ?></option>
                                 <?php
                                     while($data2 = mysqli_fetch_array($sql2))
                                     {
@@ -65,7 +71,7 @@
                             </div>
                             <div class="form-group col-md-4">
                                 <label for="harga">Harga</label>
-                                <input type="number" class="form-control" name="harga" id="harga">
+                                <input type="number" class="form-control" value="<?php echo $data_bus['harga']; ?>" name="harga" id="harga">
                             </div>
                         </div>
                         <div class="form-row">
@@ -74,7 +80,7 @@
                                 <input type="file" class="form-control" name="foto_bus" id="foto_bus">
                             </div>
                         </div>
-                        <button type="submit" class="btn btn-primary">Submit</button>
+                        <button type="submit" class="btn btn-primary">Save</button>
                     </form>
                     </div>
                 </div>

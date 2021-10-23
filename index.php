@@ -1,12 +1,11 @@
 <?php include('header.php');?>
     
-
     <section class="probootstrap-cover overflow-hidden relative"  style="background-image: url('assets/images/bg_1.jpg');" data-stellar-background-ratio="0.5"  id="section-home">
       <div class="overlay"></div>
       <div class="container">
         <div class="row align-items-center">
           <div class="col-md">
-            <h2 class="heading mb-2 display-4 font-light probootstrap-animate">Daftar sekarang juga!</h2>
+            <h2 class="heading mb-2 display-4 font-light probootstrap-animate">Cari tiket sekarang juga!</h2>
             <p class="lead mb-5 probootstrap-animate">
               
 
@@ -24,17 +23,15 @@
 
                       <label for="id_label_single" style="width: 100%;">
                         <select class="js-example-basic-single js-states form-control" id="id_label_single" style="width: 100%;">
-                          <option value="Australia">Australia</option>
-                          <option value="Japan">Japan</option>
-                          <option value="United States">United States</option>
-                          <option value="Brazil">Brazil</option>
-                          <option value="China">China</option>
-                          <option value="Israel">Israel</option>
-                          <option value="Philippines">Philippines</option>
-                          <option value="Malaysia">Malaysia</option>
-                          <option value="Canada">Canada</option>
-                          <option value="Chile">Chile</option>
-                          <option value="Chile">Zimbabwe</option>
+                          <?php
+                          $query = "SELECT * FROM kota";
+                          $sql = mysqli_query($dbc,$query);
+                          $sql2 = mysqli_query($dbc,$query);
+                          while($data = mysqli_fetch_array($sql))
+                          {
+                            echo "<option value='$data[nama_kota]'>".$data['nama_kota']."</option>";
+                          }
+                          ?>
                         </select>
                       </label>
 
@@ -47,17 +44,12 @@
                       <div class="probootstrap_select-wrap">
                         <label for="id_label_single2" style="width: 100%;">
                         <select class="js-example-basic-single js-states form-control" id="id_label_single2" style="width: 100%;">
-                          <option value="Australia">Australia</option>
-                          <option value="Japan">Japan</option>
-                          <option value="United States">United States</option>
-                          <option value="Brazil">Brazil</option>
-                          <option value="China">China</option>
-                          <option value="Israel">Israel</option>
-                          <option value="Philippines">Philippines</option>
-                          <option value="Malaysia">Malaysia</option>
-                          <option value="Canada">Canada</option>
-                          <option value="Chile">Chile</option>
-                          <option value="Chile">Zimbabwe</option>
+                        <?php
+                          while($data2 = mysqli_fetch_array($sql2))
+                          {
+                            echo "<option value='$data2[nama_kota]'>".$data2['nama_kota']."</option>";
+                          }
+                        ?>
                         </select>
                       </label>
                       </div>
