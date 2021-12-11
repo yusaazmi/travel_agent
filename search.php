@@ -1,4 +1,8 @@
-<?php include('header.php');?>
+<?php include('header.php');
+
+
+
+?>
     <!-- END nav -->
     
 
@@ -59,10 +63,23 @@
             <h2 class="display-4 border-bottom probootstrap-section-heading">Bus dan Travel</h2>
           </div>
         </div>
+        <?php
+        $keberangkatan = $_POST['dari'];
+        $kota = $_POST['tujuan'];
+        $q1 = "SELECT * FROM keberangkatan where id_keberangkatan = $keberangkatan";
+        $q2 = "SELECT * FROM kota where id_kota = $kota";
+        $sql2 = mysqli_query($dbc,$q1);
+        $sql3 = mysqli_query($dbc,$q2);
+        $keberangkatan1 = mysqli_fetch_object($sql2);
+        $kota2 = mysqli_fetch_object($sql3);
+        
+        echo "<h4>Menampilkan pencarian ".$keberangkatan1->nama_terminal." ke-".$kota2->nama_kota."</h4>";
+        ?>
         <div class="row mb-4">
         <?php
-        $query = "SELECT * FROM bus LEFT JOIN kota on bus.tujuan = kota.id_kota LEFT JOIN keberangkatan on bus.dari = keberangkatan.id_keberangkatan";
-        $sql = mysqli_query($dbc,$query);
+        // $query = "SELECT * FROM bus,keberangkatan,kota WHERE bus.dari = $keberangkatan AND bus.kota = $kota";
+        $query1 = "SELECT * FROM bus LEFT JOIN keberangkatan on bus.dari = keberangkatan.id_keberangkatan LEFT JOIN kota on bus.tujuan = kota.id_kota WHERE bus.dari = $keberangkatan AND bus.tujuan = $kota";
+        $sql = mysqli_query($dbc,$query1);
         while($data = mysqli_fetch_array($sql))
         {
         ?>

@@ -9,7 +9,7 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
-    <title>Hello, world!</title>
+    <title>Mahesa Travel - Login</title>
   </head>
   <body>
       <style>
@@ -94,11 +94,11 @@ select.form-control {
         <!-- For Demo Purpose -->
         <div class="col-md-5 pr-lg-5 mb-5 mb-md-0">
             <img src="https://res.cloudinary.com/mhmd/image/upload/v1569543678/form_d9sh6m.svg" alt="" class="img-fluid mb-3 d-none d-md-block">
-            <h1>Create an Account</h1>
-            <p class="font-italic text-muted mb-0">Create a minimal registeration page using Bootstrap 4 HTML form elements.</p>
+            <h1>Login ke akunmu</h1>
+            <!-- <p class="font-italic text-muted mb-0">Create a minimal registeration page using Bootstrap 4 HTML form elements.</p>
             <p class="font-italic text-muted">Snippet By <a href="https://bootstrapious.com" class="text-muted">
                 <u>Bootstrapious</u></a>
-            </p>
+            </p> -->
         </div>
 
         <!-- Registeration Form -->
@@ -107,7 +107,7 @@ select.form-control {
                 <div class="row">
 
                     <!-- First Name -->
-                    <div class="input-group col-lg-6 mb-4">
+                    <div class="input-group col-lg-12 mb-4">
                         <div class="input-group-prepend">
                             <span class="input-group-text bg-white px-4 border-md border-right-0">
                                 <i class="fa fa-user text-muted"></i>
@@ -117,14 +117,6 @@ select.form-control {
                     </div>
 
                     <!-- Last Name -->
-                    <div class="input-group col-lg-6 mb-4">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text bg-white px-4 border-md border-right-0">
-                                <i class="fa fa-user text-muted"></i>
-                            </span>
-                        </div>
-                        <input id="nama" type="text" name="nama" placeholder="Nama" class="form-control bg-white border-left-0 border-md">
-                    </div>
 
                     <!-- Email Address -->
                     <div class="input-group col-lg-12 mb-4">
@@ -137,32 +129,10 @@ select.form-control {
                     </div>
 
                     <!-- Phone Number -->
-                    <div class="input-group col-lg-12 mb-4">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text bg-white px-4 border-md border-right-0">
-                                <i class="fa fa-phone-square text-muted"></i>
-                            </span>
-                        </div>
-                        <select id="countryCode" name="countryCode" style="max-width: 80px" class="custom-select form-control bg-white border-left-0 border-md h-100 font-weight-bold text-muted" disabled>
-                            <option value="" selected>+62</option>
-                        </select>
-                        <input id="phoneNumber" type="tel" name="no_hp" placeholder="Nomor Telfon" class="form-control bg-white border-md border-left-0 pl-3">
-                    </div>.
-
-
-                    <!-- Job -->
-                    <div class="input-group col-lg-12 mb-4">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text bg-white px-4 border-md border-right-0">
-                                <i class="fa fa-home text-muted"></i>
-                            </span>
-                        </div>
-                        <input id="alamat" type="text" name="alamat" placeholder="Alamat" class="form-control bg-white border-left-0 border-md">
-                    </div>
 
                     <!-- Submit Button -->
                     <div class="form-group col-lg-12 mx-auto mb-0">
-                        <button class="btn btn-primary btn-block py-2" type="submit">Create your account</button>
+                        <button class="btn btn-primary btn-block py-2" type="submit">Login</button>
                     </div>
 
                     <!-- Divider Text -->
@@ -176,7 +146,7 @@ select.form-control {
 
                     <!-- Already Registered -->
                     <div class="text-center w-100">
-                        <p class="text-muted font-weight-bold">Already Registered? <a href="login.php" class="text-primary ml-2">Login</a></p>
+                        <p class="text-muted font-weight-bold">Belum Punya Akun? <a href="registration.php" class="text-primary ml-2">Daftar</a></p>
                     </div>
 
                 </div>

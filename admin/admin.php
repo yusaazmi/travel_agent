@@ -4,10 +4,10 @@
                     <div class="container-fluid">
                         <div class="d-flex bd-highlight mb-3">
                             <div class="mr-auto p-2 bd-highlight">
-                                <h1 class="">Data Kota</h1>
+                                <h1 class="">Data Admin</h1>
                             </div>
                             <div class="p-2 bd-highlight">
-                                <a href="add_kota.php" class="btn btn-primary"><i class="fas fa-plus-square"></i></a>
+                                <a href="add_admin.php" class="btn btn-primary"><i class="fas fa-plus-square"></i></a>
                             </div>
                         </div>
                         <div class="card mb-4">
@@ -19,14 +19,17 @@
                                 <div class="table-responsive">
                                     <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                     <?php
-                                        $query = "SELECT * FROM kota";
+                                        $query = "SELECT * FROM user WHERE type_user = 'admin'";
                                         $sql = mysqli_query($dbc,$query);
                                         $i = 1;
                                     ?>
                                         <thead>
                                             <tr>
                                                 <th style="width:10%;">No</th>
-                                                <th>Nama Kota</th>
+                                                <th>Nama</th>
+                                                <th>Username</th>
+                                                <th>Alamat</th>
+                                                <th>Nomor Hp</th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -35,7 +38,10 @@
                                                 {
                                                 echo "<tr>";
                                                     echo "<td>".$i."</td>";
-                                                    echo "<td>".$data['nama_kota']."</td>";
+                                                    echo "<td>".$data['nama']."</td>";
+                                                    echo "<td>".$data['username']."</td>";
+                                                    echo "<td>".$data['alamat']."</td>";
+                                                    echo "<td>".$data['no_hp']."</td>";
                                                 echo "</tr>";
                                                 $i++;
                                             }

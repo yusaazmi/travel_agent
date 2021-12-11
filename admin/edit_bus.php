@@ -1,6 +1,6 @@
 <?php include('header.php');
 $id = $_GET['id'];
-$bus = "SELECT * from bus LEFT JOIN kota k1 on bus.dari = k1.id_kota LEFT JOIN kota k2 on bus.tujuan = k2.id_kota where id_bus = $id";
+$bus = "SELECT * from bus LEFT JOIN keberangkatan k1 on bus.dari = k1.id_keberangkatan LEFT JOIN kota k2 on bus.tujuan = k2.id_kota where id_bus = $id";
 $sql_bus = mysqli_query($dbc,$bus);
 $data_bus = mysqli_fetch_array($sql_bus);
 ?>
@@ -40,7 +40,7 @@ $data_bus = mysqli_fetch_array($sql_bus);
                         </div>
                         <div class="form-row">
                             <?php 
-                            $query = "SELECT * FROM kota";
+                            $query = "SELECT * FROM keberangkatan";
                             $query2 = "SELECT * FROM kota";
                             $sql = mysqli_query($dbc,$query);
                             $sql2 = mysqli_query($dbc,$query2);
@@ -48,11 +48,11 @@ $data_bus = mysqli_fetch_array($sql_bus);
                             <div class="form-group col-md-4">
                                 <label for="inputEmail4">Dari</label>
                                 <select name="dari" id="dari" class="form-select">
-                                    <option value="<?php echo $data_bus['dari'];?>"><?php echo $data_bus[9]; ?></option>
+                                    <option value="<?php echo $data_bus['dari'];?>"><?php echo $data_bus['nama_terminal']; ?></option>
                                 <?php
                                 while($data = mysqli_fetch_array($sql))
                                 {
-                                    echo "<option value='$data[id_kota]'>$data[nama_kota]</option>";
+                                    echo "<option value='$data[id_keberangkatan]'>$data[nama_terminal]</option>";
                                 }
                                 ?>
                                 </select>

@@ -51,7 +51,7 @@ session_start();
             <li class="nav-item active"><a class="nav-link" href="index.php">Home</a></li>
             <li class="nav-item"><a class="nav-link" href="jadwal_bus.php">Jadwal Bus</a></li>
             <li class="nav-item"><a class="nav-link" href="travel.php">Travel</a></li>
-            <li class="nav-item"><a class="nav-link" href="travel.html">Travel With Us</a></li>
+            <li class="nav-item"><a class="nav-link" href="pemesanan.php">Pemesanan</a></li>
             <li class="nav-item"><a class="nav-link" href="contact.php">Contact</a></li>
             <?php
             if(isset($_SESSION['username']))

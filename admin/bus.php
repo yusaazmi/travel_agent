@@ -31,7 +31,8 @@
                                 </thead>
                                 <tbody>
                                     <?php 
-                                    $query = "SELECT * FROM bus LEFT JOIN kota k1 on bus.dari = k1.id_kota LEFT JOIN kota k2 on bus.tujuan = k2.id_kota";
+                                    // $query = "SELECT * FROM bus LEFT JOIN kota k1 on bus.dari = k1.id_kota LEFT JOIN kota k2 on bus.tujuan = k2.id_kota";
+                                    $query = "SELECT * FROM bus LEFT JOIN kota on bus.tujuan = kota.id_kota LEFT JOIN keberangkatan on bus.dari = keberangkatan.id_keberangkatan";
                                     $sql = mysqli_query($dbc,$query);
                                     while($data = mysqli_fetch_array($sql))
                                     {
@@ -39,7 +40,7 @@
                                     ?>
                                     <tr>
                                         <td><?php echo $data['kendaraan']; ?></td>
-                                        <td><?php echo $data[9]; ?></td>
+                                        <td><?php echo $data['nama_terminal']; ?></td>
                                         <td><?php echo $data['nama_kota']; ?></td>
                                         <td><?php echo $data['jumlah_kursi']; ?></td>
                                         <td>Rp.<?php echo number_format($data['harga']); ?></td>

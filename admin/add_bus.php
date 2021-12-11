@@ -34,7 +34,7 @@
                         </div>
                         <div class="form-row">
                             <?php 
-                            $query = "SELECT * FROM kota";
+                            $query = "SELECT * FROM keberangkatan";
                             $query2 = "SELECT * FROM kota";
                             $sql = mysqli_query($dbc,$query);
                             $sql2 = mysqli_query($dbc,$query2);
@@ -42,11 +42,11 @@
                             <div class="form-group col-md-4">
                                 <label for="inputEmail4">Dari</label>
                                 <select name="dari" id="dari" class="form-select">
-                                    <option value="">Pilih kota awal</option>
+                                    <option value="">Pilih Keberangkatan</option>
                                 <?php
                                 while($data = mysqli_fetch_array($sql))
                                 {
-                                    echo "<option value='$data[id_kota]'>$data[nama_kota]</option>";
+                                    echo "<option value='$data[id_keberangkatan]'>$data[nama_terminal]</option>";
                                 }
                                 ?>
                                 </select>

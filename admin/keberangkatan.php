@@ -4,10 +4,10 @@
                     <div class="container-fluid">
                         <div class="d-flex bd-highlight mb-3">
                             <div class="mr-auto p-2 bd-highlight">
-                                <h1 class="">Data Kota</h1>
+                                <h1 class="">Data Keberangkatan</h1>
                             </div>
                             <div class="p-2 bd-highlight">
-                                <a href="add_kota.php" class="btn btn-primary"><i class="fas fa-plus-square"></i></a>
+                                <a href="add_keberangkatan.php" class="btn btn-primary"><i class="fas fa-plus-square"></i></a>
                             </div>
                         </div>
                         <div class="card mb-4">
@@ -19,14 +19,14 @@
                                 <div class="table-responsive">
                                     <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                     <?php
-                                        $query = "SELECT * FROM kota";
+                                        $query = "SELECT * FROM keberangkatan";
                                         $sql = mysqli_query($dbc,$query);
                                         $i = 1;
                                     ?>
                                         <thead>
                                             <tr>
                                                 <th style="width:10%;">No</th>
-                                                <th>Nama Kota</th>
+                                                <th>Nama terminal</th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -35,7 +35,7 @@
                                                 {
                                                 echo "<tr>";
                                                     echo "<td>".$i."</td>";
-                                                    echo "<td>".$data['nama_kota']."</td>";
+                                                    echo "<td>".$data['nama_terminal']."</td>";
                                                 echo "</tr>";
                                                 $i++;
                                             }
