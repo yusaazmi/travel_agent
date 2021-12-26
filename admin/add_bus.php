@@ -74,6 +74,12 @@
                                 <input type="file" class="form-control" name="foto_bus" id="foto_bus">
                             </div>
                         </div>
+                        <div class="form-row">
+                            <label for="">Deskripsi</label>
+                            <div class="form-group col-md-12">
+                                <textarea name="deskripsi" id="" cols="50" rows="5"></textarea>
+                            </div>
+                        </div>
                         <button type="submit" class="btn btn-primary">Submit</button>
                     </form>
                     </div>

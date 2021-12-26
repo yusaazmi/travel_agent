@@ -31,7 +31,7 @@ session_start();
     <link rel="stylesheet" href="assets/fonts/fontawesome/css/font-awesome.min.css">
     <link rel="stylesheet" href="assets/css/bootstrap-datepicker.css">
     <link rel="stylesheet" href="assets/css/select2.css">
-    
+    <link rel="icon" href="assets/images/logo.png">
 
     <link rel="stylesheet" href="assets/css/helpers.css">
     <link rel="stylesheet" href="assets/css/style.css">
@@ -47,28 +47,39 @@ session_start();
           <span><i class="ion-navicon"></i></span>
         </button>
         <div class="collapse navbar-collapse" id="probootstrap-menu">
-          <ul class="navbar-nav ml-auto">
-            <li class="nav-item active"><a class="nav-link" href="index.php">Home</a></li>
-            <li class="nav-item"><a class="nav-link" href="jadwal_bus.php">Jadwal Bus</a></li>
-            <li class="nav-item"><a class="nav-link" href="travel.php">Travel</a></li>
-            <li class="nav-item"><a class="nav-link" href="pemesanan.php">Pemesanan</a></li>
-            <li class="nav-item"><a class="nav-link" href="contact.php">Contact</a></li>
+        <ul class="navbar-nav ml-auto">
             <?php
-            if(isset($_SESSION['username']))
+            if(!isset($_SESSION['username']))
             {
             ?>
+            <li class="nav-item active"><a class="nav-link" href="index.php">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="jadwal_bus.php">Jadwal Bus</a></li>
+            <!-- <li class="nav-item"><a class="nav-link" href="travel.php">Travel</a></li> -->
+            <!-- <li class="nav-item"><a class="nav-link" href="pemesanan.php">Pemesanan</a></li> -->
+            <li class="nav-item"><a class="nav-link" href="contact.php">Contact</a></li>
+            <li class="nav-item"><a class="nav-link" href="login.php">Login</a></li>
             <!-- Example single danger button -->
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <?php echo $_SESSION['username'];?>
-                </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="profile.php">Profil</a>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="logout.php">Log out</a>
-                </div>
-            </li>
-            <?php } ?>
+            <?php } 
+            else{
+            ?>
+                <li class="nav-item active"><a class="nav-link" href="index.php">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="jadwal_bus.php">Jadwal Bus</a></li>
+                <!-- <li class="nav-item"><a class="nav-link" href="travel.php">Travel</a></li> -->
+                <!-- <li class="nav-item"><a class="nav-link" href="pemesanan.php">Pemesanan</a></li> -->
+                <li class="nav-item"><a class="nav-link" href="contact.php">Contact</a></li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <?php echo $_SESSION['username'];?>
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <!-- <a class="dropdown-item" href="profile.php">Profil</a> -->
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="logout.php">Log out</a>
+                    </div>
+                </li>
+            <?php
+            }
+            ?>
           </ul>
         </div>
       </div>

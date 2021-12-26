@@ -82,7 +82,7 @@ select.form-control {
         <div class="container">
             <!-- Navbar Brand -->
             <a href="#" class="navbar-brand">
-                <img src="https://res.cloudinary.com/mhmd/image/upload/v1571398888/Group_1514_tjekh3_zkts1c.svg" alt="logo" width="150">
+                <!-- <img src="https://res.cloudinary.com/mhmd/image/upload/v1571398888/Group_1514_tjekh3_zkts1c.svg" alt="logo" width="150"> -->
             </a>
         </div>
     </nav>
@@ -93,12 +93,8 @@ select.form-control {
     <div class="row py-5 mt-4 align-items-center">
         <!-- For Demo Purpose -->
         <div class="col-md-5 pr-lg-5 mb-5 mb-md-0">
-            <img src="https://res.cloudinary.com/mhmd/image/upload/v1569543678/form_d9sh6m.svg" alt="" class="img-fluid mb-3 d-none d-md-block">
-            <h1>Create an Account</h1>
-            <p class="font-italic text-muted mb-0">Create a minimal registeration page using Bootstrap 4 HTML form elements.</p>
-            <p class="font-italic text-muted">Snippet By <a href="https://bootstrapious.com" class="text-muted">
-                <u>Bootstrapious</u></a>
-            </p>
+            <img src="assets/images/logo.png" style="width:300px;" alt="" class="img-fluid mb-3 d-none d-md-block">
+            <h1>Buat Akunmu</h1>
         </div>
 
         <!-- Registeration Form -->

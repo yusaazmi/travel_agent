@@ -7,6 +7,7 @@ $dari = $_POST['dari'];
 $tujuan = $_POST['tujuan'];
 $jumlah_kursi = $_POST['jumlah_kursi'];
 $harga = $_POST['harga'];
+$deskripsi = $_POST['deskripsi'];
 
 $foto_bus = $_FILES['foto_bus']['name'];
 $tmp = $_FILES['foto_bus']['tmp_name'];
@@ -16,7 +17,7 @@ $path = '../assets/bus/'.$gambar;
 
     if(move_uploaded_file($tmp,$path))
     {      
-        $query = "INSERT INTO bus (kendaraan,plat_nomor,dari,tujuan,jumlah_kursi,harga,foto_bus) values ('$kendaraan','$plat_nomor','$dari','$tujuan','$jumlah_kursi','$harga','$gambar')";
+        $query = "INSERT INTO bus (kendaraan,plat_nomor,dari,tujuan,jumlah_kursi,harga,foto_bus,deskripsi) values ('$kendaraan','$plat_nomor','$dari','$tujuan','$jumlah_kursi','$harga','$gambar','$deskripsi')";
         mysqli_query($dbc,$query) or die(mysqli_error($dbc));
         
         if($query)

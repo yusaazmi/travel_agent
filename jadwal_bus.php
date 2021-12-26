@@ -67,7 +67,7 @@
         {
         ?>
           <div class="col-lg-3 col-md-6 probootstrap-animate mb-3">
-            <a href="#" class="probootstrap-thumbnail">
+            <a href="pemesanan.php?id=<?php echo $data['id_bus'];?>" class="probootstrap-thumbnail">
               <img src="assets/bus/<?php echo $data['foto_bus'] ?>" alt="" style="width:255px;height:255px;" class="img-fluid">
               <div class="probootstrap-text">
                 <h3><?php echo $data['kendaraan'];?></h3>
