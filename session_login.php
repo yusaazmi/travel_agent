@@ -10,8 +10,9 @@ if (isset($_POST['username']) AND isset($_POST['password']))
     if($cek > 0)
     {
         $data = mysqli_fetch_array($login);
-        // $_SESSION['id'] = $data['id'];
+        $_SESSION['id_user'] = $data['id_user'];
         $_SESSION['username'] = $data['username'];
+        $_SESSION['nama'] = $data['nama'];
         // // var_dump($data);
             echo "<script>alert('berhasil login');window.location='index.php'</script>";
     }

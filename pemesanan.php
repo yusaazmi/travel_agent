@@ -40,82 +40,100 @@ session_start();
 	</head>
 	<body>
         <style>
-            .btn-primary {
-    background-color: #42A5F5 !important;
-    border-color: #42A5F5 !important
+            @import url('https://fonts.googleapis.com/css?family=Lato:400,500,600,700&display=swap');
+.wrapper{
+  display: inline-flex;
+  height: 100px;
+  width: 400px;
+  align-items: center;
+  justify-content: space-evenly;
+  padding: 20px 15px;
 }
-
-.cursor-pointer {
-    cursor: pointer;
-    color: #42A5F5
+.wrapper .option{
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  margin: 0 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  padding: 0 10px;
+  border: 2px solid lightgrey;
+  transition: all 0.3s ease;
 }
-
-.pic {
-    margin-top: 15px;
-    margin-bottom: 15px;
+.wrapper .option .dot{
+  height: 20px;
+  width: 20px;
+  background: #d9d9d9;
+  border-radius: 50%;
+  position: relative;
 }
-
-.card-block {
-    width: 200px;
-    border: 1px solid lightgrey;
-    border-radius: 5px !important;
-    background-color: #FAFAFA;
-    margin-bottom: 30px
+.wrapper .option .dot::before{
+  position: absolute;
+  content: "";
+  top: 4px;
+  left: 4px;
+  width: 12px;
+  height: 12px;
+  background: #0069d9;
+  border-radius: 50%;
+  opacity: 0;
+  transform: scale(1.5);
+  transition: all 0.3s ease;
 }
-
-.card-body.show {
-    display: block
+input[type="radio"]{
+  display: none;
 }
-
-.card {
-    padding-bottom: 20px;
-    box-shadow: 2px 2px 6px 0px rgb(200, 167, 216)
+#option-1:checked:checked ~ .option-1,
+#option-2:checked:checked ~ .option-2,
+#option-3:checked:checked ~ .option-3,
+#option-4:checked:checked ~ .option-4,
+#option-5:checked:checked ~ .option-5,
+#option-6:checked:checked ~ .option-6,
+#option-7:checked:checked ~ .option-7,
+#option-8:checked:checked ~ .option-8
+{
+  border-color: #0069d9;
+  background: #0069d9;
 }
-
-.radio {
-    display: inline-block;
-    border-radius: 0;
-    box-sizing: border-box;
-    cursor: pointer;
-    color: #000;
-    font-weight: 500;
-    -webkit-filter: grayscale(100%);
-    -moz-filter: grayscale(100%);
-    -o-filter: grayscale(100%);
-    -ms-filter: grayscale(100%);
-    filter: grayscale(100%)
+#option-1:checked:checked ~ .option-1 .dot,
+#option-2:checked:checked ~ .option-2 .dot,
+#option-3:checked:checked ~ .option-3 .dot,
+#option-4:checked:checked ~ .option-4 .dot,
+#option-5:checked:checked ~ .option-5 .dot,
+#option-6:checked:checked ~ .option-6 .dot,
+#option-7:checked:checked ~ .option-7 .dot,
+#option-8:checked:checked ~ .option-8 .dot
+{
+  background: #fff;
 }
-
-.radio:hover {
-    box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.1)
+#option-1:checked:checked ~ .option-1 .dot::before,
+#option-2:checked:checked ~ .option-2 .dot::before,
+#option-3:checked:checked ~ .option-3 .dot::before,
+#option-4:checked:checked ~ .option-4 .dot::before,
+#option-5:checked:checked ~ .option-5 .dot::before,
+#option-6:checked:checked ~ .option-6 .dot::before,
+#option-7:checked:checked ~ .option-7 .dot::before,
+#option-8:checked:checked ~ .option-8 .dot::before
+{
+  opacity: 1;
+  transform: scale(1);
 }
-
-.radio.selected {
-    box-shadow: 0px 8px 16px 0px #EEEEEE;
-    -webkit-filter: grayscale(0%);
-    -moz-filter: grayscale(0%);
-    -o-filter: grayscale(0%);
-    -ms-filter: grayscale(0%);
-    filter: grayscale(0%)
+.wrapper .option span{
+  font-size: 20px;
+  color: #808080;
 }
-
-.selected {
-    background-color: #E0F2F1
-}
-
-.a {
-    justify-content: center !important
-}
-
-.btn {
-    border-radius: 0px
-}
-
-.btn,
-.btn:focus,
-.btn:active {
-    outline: none !important;
-    box-shadow: none !important
+#option-1:checked:checked ~ .option-1 span,
+#option-2:checked:checked ~ .option-2 span,
+#option-3:checked:checked ~ .option-3 span,
+#option-4:checked:checked ~ .option-4 span,
+#option-5:checked:checked ~ .option-5 span,
+#option-6:checked:checked ~ .option-6 span,
+#option-7:checked:checked ~ .option-7 span,
+#option-8:checked:checked ~ .option-8 span
+{
+  color: #fff;
 }
         </style>
   
@@ -192,8 +210,11 @@ session_start();
     ?>
     <section class="probootstrap-section-half d-md-flex" id="section-about">
       <div class="probootstrap-text">
+        <form action="simpan_pemesanan.php" method="POST">
         <div class="probootstrap-inner probootstrap-animate px-0" data-animate-effect="fadeIn">
           <h2 class="heading mb-4 ml-3">Pilih Kursi</h2>
+          <input type="hidden" name="id_bus" value="<?php echo $data['id_bus']; ?>">
+          <input type="hidden" name="total_bayar" value="<?php echo $data['harga']; ?>">
           <div class="container">
                 <div class="row justify-content-center">
                     <div class="col-md-9">
@@ -204,73 +225,43 @@ session_start();
                                         <h5><b><?php echo $data['kendaraan']?></b></h5>
                                     </div>
                                 </div>
-                                <div class="radio-group row justify-content-between px-3 text-center a">
-                                    <div class="row">
-                                        <div class="col-auto mr-sm-2 mx-1 card-block py-0 text-center radio" style="width:120px;">
-                                            <div class="flex-row">
-                                                <div class="col">
-                                                    <div class="pic"> 1</div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-auto ml-sm-2 mx-1 card-block py-0 text-center "style="width:120px;">
-                                            <div class="flex-row">
-                                                <div class="col">
-                                                    <div class="pic">Supir</div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
+                                <div class="wrapper">
+                                    <input type="radio" name="no_kursi" id="option-1" value="1" checked>
+                                    <input type="radio" name="" id="option-2" disabled>
+                                    <label for="option-1" class="option option-1">
+                                        <span>1</span>
+                                        </label>
+                                    <label for="option-2" class="option option-2">
+                                        <span>Supir</span>
+                                    </label>
                                 </div>
-                                <div class="radio-group row justify-content-between px-3 text-center a">
-                                    <div class="row">
-                                        <div class="col-auto mr-sm-2 mx-1 card-block py-0 text-center radio " style="width:100px;">
-                                            <div class="flex-row">
-                                                <div class="col">
-                                                    <div class="pic"> 2</div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-auto ml-sm-2 mx-1 card-block py-0 text-center radio "style="width:100px;">
-                                            <div class="flex-row">
-                                                <div class="col">
-                                                    <div class="pic">3</div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-auto ml-sm-2 mx-1 card-block py-0 text-center radio "style="width:100px;">
-                                            <div class="flex-row">
-                                                <div class="col">
-                                                    <div class="pic">4</div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
+                                <div class="wrapper">
+                                    <input type="radio" name="no_kursi" value="2" id="option-3" >
+                                    <input type="radio" name="no_kursi" value="3" id="option-4">
+                                    <input type="radio" name="no_kursi" value="4" id="option-5">
+                                    <label for="option-3" class="option option-3">
+                                        <span>2</span>
+                                        </label>
+                                    <label for="option-4" class="option option-4">
+                                        <span>3</span>
+                                    </label>
+                                    <label for="option-5" class="option option-5">
+                                        <span>4</span>
+                                    </label>
                                 </div>
-                                <div class="radio-group row justify-content-between px-3 text-center a">
-                                    <div class="row">
-                                        <div class="col-auto mr-sm-2 mx-1 card-block py-0 text-center radio selected" style="width:100px;">
-                                            <div class="flex-row">
-                                                <div class="col">
-                                                    <div class="pic">5</div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-auto ml-sm-2 mx-1 card-block py-0 text-center radio "style="width:100px;">
-                                            <div class="flex-row">
-                                                <div class="col">
-                                                    <div class="pic">6</div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-auto ml-sm-2 mx-1 card-block py-0 text-center radio "style="width:100px;">
-                                            <div class="flex-row">
-                                                <div class="col">
-                                                    <div class="pic">7</div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
+                                <div class="wrapper">
+                                    <input type="radio" name="no_kursi" value="5" id="option-6" >
+                                    <input type="radio" name="no_kursi" value="6" id="option-7">
+                                    <input type="radio" name="no_kursi" value="7" id="option-8">
+                                    <label for="option-6" class="option option-6">
+                                        <span>5</span>
+                                        </label>
+                                    <label for="option-7" class="option option-7">
+                                        <span>6</span>
+                                    </label>
+                                    <label for="option-8" class="option option-8">
+                                        <span>7</span>
+                                    </label>
                                 </div>
                             </div>
                         </div>
@@ -283,9 +274,10 @@ session_start();
         <div class="probootstrap-inner probootstrap-animate" data-animate-effect="fadeInRight">
           <h2 class="heading mb-4">Customer Service</h2>
           <p><?php echo $data['deskripsi']?></p>
-          <p><a href="#" class="btn btn-primary">Pesan Sekarang</a></p>
+          <p><button type="submit" class="btn btn-primary">Pesan Sekarang</button></p>
         </div>
       </div>
+      </form>
     </section>
     <!-- END section -->
 
